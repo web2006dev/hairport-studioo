@@ -1,0 +1,295 @@
+/* ========================================================
+   THE HAIRPORT STUDIO SADAR — LUXURY UNISEX SALON
+   Design System & Styling
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  --gold-primary: #D4AF37;
+  --gold-light: #F3E5AB;
+  --gold-dark: #AA820A;
+  --gold-gradient: linear-gradient(135deg, #ECC874 0%, #D4AF37 50%, #B38F24 100%);
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  
+  --bg-dark: #0A0A0C;
+  --bg-card: #131317;
+  --bg-card-hover: #191920;
+  --border-gold: rgba(212, 175, 55, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #E2E2E6;
+  overflow-x: hidden;
+  selection-background-color: #D4AF37;
+  selection-color: #0A0A0C;
+}
+
+::selection {
+  background: #D4AF37;
+  color: #0A0A0C;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Typography Helpers */
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FDF0CD 0%, #D4AF37 55%, #B38F24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  color: #EAD087;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-card {
+  background: rgba(19, 19, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-gold {
+  background: rgba(22, 21, 26, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.glass-card-gold:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.08);
+}
+
+/* Shimmer Button */
+.btn-gold {
+  background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 60%, #B89228 100%);
+  color: #0B0B0E;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  filter: brightness(1.06);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline-gold {
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #F3E5AB;
+  background: rgba(212, 175, 55, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: #D4AF37;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Subtle Glow Effects */
+.glow-gold {
+  position: relative;
+}
+.glow-gold::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Service Card hover */
+.service-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Before / After Slider */
+.ba-container {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ba-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ba-slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #D4AF37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+  pointer-events: none;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #D4AF37;
+  color: #0A0A0C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.8);
+  cursor: ew-resize;
+  border: 2px solid #FFFFFF;
+}
+
+/* Active Category Pill */
+.category-btn.active {
+  background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 60%, #B89228 100%);
+  color: #0A0A0C;
+  font-weight: 700;
+  border-color: #D4AF37;
+}
+
+/* Animated Pulse Badge */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+  }
+}
+
+.pulse-gold {
+  animation: goldPulse 2.2s infinite;
+}
+
+/* Floating Action Dock */
+.floating-dock {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Modal Animation */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Lightbox */
+.lightbox-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.lightbox-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FAQ item smooth transition */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item.active .faq-content {
+  max-height: 250px;
+}
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Custom Checkbox / Radio styling in Modal */
+.custom-radio:checked + label {
+  border-color: #D4AF37;
+  background-color: rgba(212, 175, 55, 0.12);
+  color: #FFFFFF;
+}
+
+/* Hide scrollbar for category menu horizontally */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
